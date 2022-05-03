@@ -1,7 +1,10 @@
 package com.example.cleartab;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -33,4 +36,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void saveData() {
+
+    }
 }
