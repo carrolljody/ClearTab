@@ -21,11 +21,15 @@ public class MeditateViewModel extends ViewModel {
         this.postRepository = PostRepository.getInstance();
     }
 
+    public void init()
+    {
+        postRepository.init("");
+    }
+
     public LiveData<String> getText() {
         return mText;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void savePost(String body, int rating)
     {
         postRepository.savePost(body,rating);

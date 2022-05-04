@@ -31,6 +31,8 @@ public class MeditateFragment extends Fragment {
       meditateViewModel =
                 new ViewModelProvider(this).get(MeditateViewModel.class);
 
+      meditateViewModel.init();
+
         binding = FragmentMeditateBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
@@ -42,12 +44,11 @@ public class MeditateFragment extends Fragment {
         meditateViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         saveButton.setOnClickListener(v-> {
-            meditateViewModel.savePost(meditateEditText.getText().toString(), 5);
+            meditateViewModel.savePost("test", 5);
         });
         return root;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void saveData() {
         meditateViewModel.savePost(meditateEditText.getText().toString(), 5);
     }

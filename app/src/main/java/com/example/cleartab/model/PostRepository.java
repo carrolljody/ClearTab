@@ -21,11 +21,10 @@ public class PostRepository {
     }
 
     public void init(String userId) {
-        myRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+        myRef = FirebaseDatabase.getInstance("https://cleartab-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("posts");/*.child(userId);*/
         postLiveData = new PostLiveData(myRef);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void savePost(String body, int rating) {
         myRef.setValue(new Post(body, rating));
     }
