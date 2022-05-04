@@ -10,16 +10,25 @@ import java.time.LocalDateTime;
 public class Post {
     private int id;
     private String body;
-    //private LocalDateTime timestamp;
+    private LocalDateTime timestamp;
     private int rating;
 
     public Post(){
         //
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public Post(String body, int rating) {
         this.body = body;
-   //     this.timestamp = LocalDateTime.now();
+        this.timestamp = LocalDateTime.now();
         this.rating = rating;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 
     public int getRating() {

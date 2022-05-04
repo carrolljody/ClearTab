@@ -49,9 +49,10 @@ public class MeditateFragment extends Fragment {
         return root;
     }
 
+ /*   @RequiresApi(api = Build.VERSION_CODES.O)
     public void saveData() {
         meditateViewModel.savePost(meditateEditText.getText().toString(), 5);
-    }
+    }*/
     @Override
     public void onDestroyView() {
         super.onDestroyView();

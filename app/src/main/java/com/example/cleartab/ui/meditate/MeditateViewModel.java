@@ -30,6 +30,7 @@ public class MeditateViewModel extends ViewModel {
         return mText;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void savePost(String body, int rating)
     {
         postRepository.savePost(body,rating);

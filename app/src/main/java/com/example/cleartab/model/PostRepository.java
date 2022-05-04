@@ -25,6 +25,7 @@ public class PostRepository {
         postLiveData = new PostLiveData(myRef);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void savePost(String body, int rating) {
         myRef.setValue(new Post(body, rating));
     }
