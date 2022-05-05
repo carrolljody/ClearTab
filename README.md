@@ -11,8 +11,8 @@ them more control over their mobile devices use.
 
 ***REQUIREMENTS***
 
+- [x] *AU IW to carry out a mindfulness exercise 
 - [] *AU IW to set a timer for notification for mindfulness
-- [] *AU IW to carry out a mindfulness exercise 
 - [] *AU IW to choose the length for a mindulness exercise
 - [] *AU IW the mindfull exercises to be either visual or auditory 
 - [] *AU IW to access resources for mindfulness
