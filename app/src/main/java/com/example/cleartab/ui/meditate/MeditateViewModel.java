@@ -17,7 +17,10 @@ public class MeditateViewModel extends ViewModel {
 
     public MeditateViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is meditation fragment");
+        mText.setValue("Close your eyes.\n\nPay attention to the surrounding noise.\n\n " +
+                "Focus 100% on that.\n\n" +
+                "Refocus when you get lost.\n\n" +
+                "Write down your thoughts after.");
         this.postRepository = PostRepository.getInstance();
     }
 
