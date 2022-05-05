@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916118541856",
+    "project_id": "cleartab",
+    "storage_bucket": "cleartab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916118541856:android:30c34eb276c66a416b0e45",
+        "android_client_info": {
+          "package_name": "com.example.cleartab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916118541856-l70d4rolbok3rughkio3i6m31qagke10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJxa7QOFhLYkLHlImWuFlR8_P6ifAcFG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916118541856-l70d4rolbok3rughkio3i6m31qagke10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

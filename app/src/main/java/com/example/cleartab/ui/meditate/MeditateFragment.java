@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class MeditateFragment extends Fragment {
     private EditText meditateEditText;
     private TextView meditateTextView;
     private Button saveButton;
+    private RatingBar meditateRatingBar;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -39,20 +41,21 @@ public class MeditateFragment extends Fragment {
         meditateEditText = root.findViewById(R.id.text_exercise);
         meditateTextView = root.findViewById(R.id.text_meditate);
         saveButton = root.findViewById(R.id.button_save);
+        meditateRatingBar = root.findViewById(R.id.exercise_ratingBar);
 
         final TextView textView = binding.textMeditate;
         meditateViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         saveButton.setOnClickListener(v-> {
-            meditateViewModel.savePost("test", 5);
+            meditateViewModel.savePost(meditateEditText.getText().toString(), (int)meditateRatingBar.getRating());
+        });
+
+        meditateEditText.setOnClickListener(v->{
+            meditateEditText.setText("");
         });
         return root;
     }
 
- /*   @RequiresApi(api = Build.VERSION_CODES.O)
-    public void saveData() {
-        meditateViewModel.savePost(meditateEditText.getText().toString(), 5);
-    }*/
     @Override
     public void onDestroyView() {
         super.onDestroyView();
