@@ -19,6 +19,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/timer_meditate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="50sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/text_exercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_meditate" />
+
     <EditText
         android:id="@+id/text_exercise"
         android:layout_width="wrap_content"
@@ -27,7 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_meditate" />
+        />
 
     <Button
         android:id="@+id/button_save"
@@ -44,7 +56,7 @@
         android:id="@+id/exercise_ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:numStars="5"
         android:stepSize="1"
         app:layout_constraintBottom_toBottomOf="parent"
