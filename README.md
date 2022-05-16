@@ -20,7 +20,7 @@ them more control over their mobile devices use.
 - [] *AU IW to be able to journal my experience
 - [] *AU IW to visualise data based on my exercises i.e. frequently skip exercieses at a certain time of day
 - [] *AU IW to add tags to my mindfulness exercises
-- [] *AU IW to add a rating to my mindfulness exercises
-- [] *AU IW be notified of interesting sites in my vicinity that could aid my mmindfulness exercise
+- [x] *AU IW to add a rating to my mindfulness exercises
+- [] *AU IW be notified of interesting sites in my vicinity that could aid my mindfulness exercise
 - [] *AU IW to save locations where I found mindfulness exercises more benefitial 
 
