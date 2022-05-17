@@ -24,7 +24,7 @@ import java.util.Locale;
 
 public class MeditateFragment extends Fragment {
 
-    private static final long START_TIME_IN_MILLIS = 3000;
+    private static long START_TIME_IN_MILLIS = 5000;
 
     private TextView timerTextView;
     private Button startButton;
@@ -32,6 +32,9 @@ public class MeditateFragment extends Fragment {
     private CountDownTimer timer;
     private boolean isTimerRunning;
     private long timeLeftInMillis = START_TIME_IN_MILLIS;
+
+    private Button addButton;
+    private Button subtractButton;
 
     private FragmentMeditateBinding binding;
     private MeditateViewModel meditateViewModel;
@@ -54,23 +57,22 @@ public class MeditateFragment extends Fragment {
         timerTextView = root.findViewById(R.id.timer_meditate);
         startButton = root.findViewById(R.id.button_start);
         resetButton = root.findViewById(R.id.button_reset);
-
         meditateEditText = root.findViewById(R.id.text_exercise);
         meditateTextView = root.findViewById(R.id.text_meditate);
         saveButton = root.findViewById(R.id.button_save);
         meditateRatingBar = root.findViewById(R.id.exercise_ratingBar);
+        addButton = root.findViewById(R.id.button_add);
+        subtractButton = root.findViewById(R.id.button_subtract);
 
         final TextView textView = binding.textMeditate;
         meditateViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        //save button
         saveButton.setOnClickListener(v-> {
             meditateViewModel.savePost(meditateEditText.getText().toString(), (int)meditateRatingBar.getRating());
         });
 
-        meditateEditText.setOnClickListener(v->{
-            meditateEditText.setText("");
-        });
-
+        //start timer button
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,14 +84,36 @@ public class MeditateFragment extends Fragment {
             }
         });
 
+        //reset button
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetTimer();
             }
         });
-
         updateCountDownText();
+
+        //add button
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isTimerRunning) {
+                    timeLeftInMillis = timeLeftInMillis + 60000;
+                    updateCountDownText();
+                }
+            }
+        });
+
+        //subtract button
+        subtractButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isTimerRunning && timeLeftInMillis>=60000) {
+                    timeLeftInMillis = timeLeftInMillis - 60000;
+                    updateCountDownText();
+                }
+            }
+        });
         return root;
     }
 
@@ -108,6 +132,7 @@ public class MeditateFragment extends Fragment {
                 startButton.setVisibility(View.INVISIBLE);
                 resetButton.setVisibility(View.VISIBLE);
 
+                //play gong after exercise is finished
                 final MediaPlayer mp = MediaPlayer.create(binding.getRoot().getContext(), R.raw.gonganak);
                 mp.start();
             }

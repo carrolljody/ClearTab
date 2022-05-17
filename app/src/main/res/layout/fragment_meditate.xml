@@ -24,19 +24,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/timer_startTime"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_exercise"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_meditate" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/timer_meditate"
+        app:layout_constraintTop_toBottomOf="@+id/timer_meditate" />
+
+    <Button
+        android:id="@+id/button_subtract"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/subtract"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/timer_meditate"
+        app:layout_constraintTop_toBottomOf="@+id/timer_meditate" />
 
     <Button
         android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start"
+        app:layout_constraintBottom_toTopOf="@+id/text_exercise"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_centerHorizontal="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timer_meditate" />
 
@@ -44,17 +61,18 @@
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/reset"
         android:layout_marginStart="20dp"
+        android:text="@string/reset"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/button_start"
-        app:layout_constraintTop_toBottomOf="@+id/timer_meditate"
+        app:layout_constraintTop_toTopOf="@+id/button_start"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/text_exercise"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/exercise_pushText"
         android:inputType="textLongMessage|textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/button_save"
