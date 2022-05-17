@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -71,6 +72,7 @@ public class MeditateFragment extends Fragment {
         saveButton.setOnClickListener(v-> {
             meditateViewModel.savePost(meditateEditText.getText().toString(), (int)meditateRatingBar.getRating());
             clear();
+            Toast.makeText(root.getContext(),"Entry saved",Toast.LENGTH_SHORT).show();
         });
 
         //start timer button
@@ -136,6 +138,8 @@ public class MeditateFragment extends Fragment {
                 //play gong after exercise is finished
                 final MediaPlayer mp = MediaPlayer.create(binding.getRoot().getContext(), R.raw.gonganak);
                 mp.start();
+
+                Toast.makeText(binding.getRoot().getContext(),"Congrats!\nPlease enter any insights you wish to save.",Toast.LENGTH_SHORT).show();
             }
         }.start();
 
