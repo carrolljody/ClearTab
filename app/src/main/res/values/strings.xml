@@ -4,5 +4,8 @@
     <string name="title_meditate">Meditation</string>
     <string name="title_journal">Journal</string>
     <string name="save">Save</string>
+    <string name="start">Start</string>
+    <string name="reset">Reset</string>
     <string name="exercise_pushText">Enter your insights here…</string>
+    <string name="timer_startTime">00:00</string>
 </resources>

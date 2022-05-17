@@ -23,33 +23,52 @@
         android:id="@+id/timer_meditate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:00"
-        android:textSize="50sp"
-
+        android:text="@string/timer_startTime"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/text_exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_meditate" />
 
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_meditate" />
+
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:layout_marginStart="20dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/button_start"
+        app:layout_constraintTop_toBottomOf="@+id/timer_meditate"
+        tools:visibility="visible" />
+
     <EditText
         android:id="@+id/text_exercise"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:text="@string/exercise_pushText"
+        android:hint="@string/exercise_pushText"
+        android:inputType="textLongMessage|textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        android:autofillHints="none" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="saveData"
         android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/exercise_ratingBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RatingBar
