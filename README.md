@@ -24,4 +24,4 @@ them more control over their mobile devices use.
 - [] *AU IW be notified of interesting sites in my vicinity that could aid my mindfulness exercise
 - [] *AU IW to save locations where I found mindfulness exercises more benefitial 
 
-[Video demo for the project](https://youtu.be/ZINO6DMN20A)
+[Video demo for the project](https://youtu.be/BrmkBBfDD0Y)
