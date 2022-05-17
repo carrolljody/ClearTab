@@ -1,5 +1,6 @@
 package com.example.cleartab.ui.meditate;
 
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -23,7 +24,7 @@ import java.util.Locale;
 
 public class MeditateFragment extends Fragment {
 
-    private static final long START_TIME_IN_MILLIS = 300000;
+    private static final long START_TIME_IN_MILLIS = 3000;
 
     private TextView timerTextView;
     private Button startButton;
@@ -58,8 +59,6 @@ public class MeditateFragment extends Fragment {
         meditateTextView = root.findViewById(R.id.text_meditate);
         saveButton = root.findViewById(R.id.button_save);
         meditateRatingBar = root.findViewById(R.id.exercise_ratingBar);
-
-
 
         final TextView textView = binding.textMeditate;
         meditateViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
@@ -108,6 +107,9 @@ public class MeditateFragment extends Fragment {
                 startButton.setText("Start");
                 startButton.setVisibility(View.INVISIBLE);
                 resetButton.setVisibility(View.VISIBLE);
+
+                final MediaPlayer mp = MediaPlayer.create(binding.getRoot().getContext(), R.raw.gonganak);
+                mp.start();
             }
         }.start();
 

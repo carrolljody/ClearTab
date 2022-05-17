@@ -36,8 +36,4 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void saveData() {
-
-    }
 }
