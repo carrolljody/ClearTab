@@ -7,16 +7,37 @@
     tools:context=".ui.journal.JournalFragment">
 
     <TextView
-        android:id="@+id/text_journal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:text="@string/journal"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_journal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_journal"
+        android:layout_width="353dp"
+        android:layout_height="257dp"
+        android:autofillHints="none"
+        android:hint="@string/journal_pushText"
+        android:inputType="textLongMessage|textMultiLine"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_saveJournal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_journal" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ public class MeditateViewModel extends ViewModel {
 
     public MeditateViewModel() {
         mText = new MutableLiveData<>();
-        //TODO: move hardcoded value to firebase so it can be easily edited
+        //TODO: move hardcoded value to firebase so it can be easily edited to different types of exercises
         mText.setValue("Close your eyes.\n\nPay attention to the surrounding noise.\n\n " +
                 "Focus 100% on that.\n\n" +
                 "Refocus when you get lost.\n\n" +
@@ -27,7 +27,7 @@ public class MeditateViewModel extends ViewModel {
 
     public void init()
     {
-        postRepository.init("");
+        postRepository.init();
     }
 
     public LiveData<String> getText() {

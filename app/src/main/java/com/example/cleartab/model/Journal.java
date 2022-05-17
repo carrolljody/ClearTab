@@ -1,25 +1,25 @@
 package com.example.cleartab.model;
 
+
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
 import java.time.LocalDateTime;
 
-public class Post {
+public class Journal {
     private String id;
     private String body;
     private LocalDateTime timestamp;
-    private int rating;
 
-    public Post(){
+    public Journal() {
         //
     }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public Post(String body, int rating) {
+    public Journal(String body) {
         this.body = body;
         this.timestamp = LocalDateTime.now();
-        this.rating = rating;
     }
 
     public LocalDateTime getTimestamp() {
@@ -28,14 +28,6 @@ public class Post {
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 
     public String getBody() {

@@ -24,7 +24,7 @@ import java.util.Locale;
 
 public class MeditateFragment extends Fragment {
 
-    private static long START_TIME_IN_MILLIS = 5000;
+    private static final long START_TIME_IN_MILLIS = 5000;
 
     private TextView timerTextView;
     private Button startButton;
@@ -70,6 +70,7 @@ public class MeditateFragment extends Fragment {
         //save button
         saveButton.setOnClickListener(v-> {
             meditateViewModel.savePost(meditateEditText.getText().toString(), (int)meditateRatingBar.getRating());
+            clear();
         });
 
         //start timer button
@@ -170,5 +171,11 @@ public class MeditateFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void clear(){
+        resetTimer();
+        meditateEditText.setText("");
+        meditateRatingBar.setRating(0);
     }
 }
